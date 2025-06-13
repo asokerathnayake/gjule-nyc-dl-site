@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(videos => {
                 videos.forEach(video => {
                     const card = document.createElement('div');
-                    card.classList.add('video-card');
+                    card.classList.add('video-card', 'card'); // Added 'card' class
 
                     const title = document.createElement('h3');
                     title.textContent = video.title;
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     iframe.setAttribute('frameborder', '0');
                     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                     iframe.setAttribute('allowfullscreen', '');
+                    iframe.loading = 'lazy'; // Added loading="lazy"
                     iframeContainer.appendChild(iframe);
                     card.appendChild(iframeContainer);
 
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(([chapters, lessonMedia]) => {
             chapters.forEach(chapter => {
                 const card = document.createElement('div');
-                card.classList.add('chapter-card');
+                card.classList.add('chapter-card', 'card'); // Added 'card' class
                 const titleEl = document.createElement('h3');
                 titleEl.textContent = chapter.title;
                 card.appendChild(titleEl);
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             iframe.setAttribute('frameborder', '0');
                             iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                             iframe.setAttribute('allowfullscreen', '');
+                            iframe.loading = 'lazy'; // Added loading="lazy"
                             iframeContainer.appendChild(iframe);
                             mediaItemEl.appendChild(iframeContainer);
 
@@ -197,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if(quizOptionsContainer) quizOptionsContainer.innerHTML = '';
                     quizzes.forEach(quiz => {
                         const card = document.createElement('div');
-                        card.classList.add('quiz-option-card');
+                        card.classList.add('quiz-option-card', 'card'); // Added 'card' class
                         card.innerHTML = `<h3>${quiz.title}</h3><p>${quiz.description}</p>`;
                         card.dataset.filename = quiz.fileName;
                         card.dataset.quizid = quiz.id;
@@ -400,31 +402,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (titleElement && firstParagraph && articleId) {
                 const title = titleElement.textContent.trim();
-                const description = firstParagraph.textContent.trim().substring(0, 150) + "..."; // Truncate for description
+                const description = firstParagraph.textContent.trim().substring(0, 150) + "...";
 
                 const schema = {
                     "@context": "https://schema.org",
-                    "@type": "BlogPosting", // Or Article, TechArticle etc.
+                    "@type": "BlogPosting",
                     "headline": title,
                     "description": description,
                     "mainEntityOfPage": {
                         "@type": "WebPage",
                         "@id": `${window.location.href}#${articleId}`
                     },
-                    "author": {
-                        "@type": "Organization", // Or Person
-                        "name": "NYS Drive Prep" // Placeholder
-                    },
+                    "author": { "@type": "Organization", "name": "NYS Drive Prep" },
                     "publisher": {
-                        "@type": "Organization",
-                        "name": "NYS Drive Prep", // Placeholder
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://yourdomain.com/img/logo.png" // Placeholder
-                        }
+                        "@type": "Organization", "name": "NYS Drive Prep",
+                        "logo": { "@type": "ImageObject", "url": "https://yourdomain.com/img/logo.png" }
                     },
-                    "datePublished": "2024-01-01", // Placeholder date
-                    "image": "" // Placeholder, ideally URL of a relevant image for the article
+                    "datePublished": "2024-01-01",
+                    "image": ""
                 };
 
                 const schemaScript = document.createElement('script');
@@ -433,5 +428,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.head.appendChild(schemaScript);
             }
         });
+    }
+
+    // --- Theme Switcher Logic ---
+    const themeSwitcherElement = document.getElementById('theme-switcher'); // Renamed to avoid conflict
+    const themeButtons = document.querySelectorAll('.theme-button');
+    const body = document.body;
+    const defaultTheme = 'theme-style-1';
+
+    function applyTheme(themeName) {
+      body.classList.remove('theme-style-1', 'theme-style-2');
+      body.classList.add(themeName);
+      localStorage.setItem('selectedTheme', themeName);
+
+      themeButtons.forEach(button => {
+        if (button.dataset.theme === themeName) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+
+    function loadSavedTheme() {
+      const savedTheme = localStorage.getItem('selectedTheme');
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else {
+        applyTheme(defaultTheme);
+      }
+    }
+
+    if (themeSwitcherElement) {
+      themeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const themeName = this.dataset.theme;
+          applyTheme(themeName);
+        });
+      });
+      loadSavedTheme();
     }
 });
