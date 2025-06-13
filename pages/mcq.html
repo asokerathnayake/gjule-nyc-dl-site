@@ -44,16 +44,24 @@
         <p>Select a quiz below to test your knowledge of New York State driving laws and road signs.</p>
         <section id="quiz-selection">
             <h2>Choose a Quiz:</h2>
-            <!-- Placeholder for quiz selection items -->
-            <div class="quiz-option">Road Signs - Practice Test 1</div>
-            <div class="quiz-option">Rules of the Road - Practice Test 1</div>
+            <div id="quiz-options-container">
+                <!-- Quiz options will be loaded here by JavaScript -->
+            </div>
         </section>
-        <section id="quiz-interface">
-            <h2>Quiz Area (Placeholder)</h2>
-            <div id="question-area">Question will appear here...</div>
-            <div id="answers-area">Answers will appear here...</div>
-            <div id="feedback-area">Feedback will appear here...</div>
-            <div id="score-area">Score: 0/0</div>
+        <section id="quiz-interface" style="display:none;"> <!-- Initially hidden -->
+            <h2 id="quiz-title"></h2>
+            <div id="question-container">
+              <p id="question-text"></p>
+              <div id="options-container">
+                <!-- Options will be loaded here -->
+              </div>
+              <button id="submit-answer-btn">Submit Answer</button>
+            </div>
+            <div id="feedback-container">
+              <!-- Feedback will appear here -->
+            </div>
+            <div id="score-container">Score: <span id="current-score">0</span> / <span id="total-questions">0</span></div>
+            <button id="next-question-btn" style="display:none;">Next Question</button>
         </section>
     </main>
 
@@ -61,7 +69,10 @@
         <p>&copy; 2024 NYS Drive Prep. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy (Placeholder)</a></p>
         <div class="social-icons">
-            <a href="#">YouTube</a> | <a href="#">TikTok</a> | <a href="#">Instagram</a> | <a href="#">Facebook</a>
+            <a href="https://www.youtube.com/YourChannel" target="_blank" rel="noopener noreferrer">YouTube</a> |
+            <a href="https://www.tiktok.com/@YourProfile" target="_blank" rel="noopener noreferrer">TikTok</a> |
+            <a href="https://www.instagram.com/YourProfile" target="_blank" rel="noopener noreferrer">Instagram</a> |
+            <a href="https://www.facebook.com/YourPage" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
     </footer>
 

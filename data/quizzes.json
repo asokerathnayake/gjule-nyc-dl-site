@@ -1,0 +1,14 @@
+[
+  {
+    "id": "mcq1",
+    "title": "Practice Quiz 1: Road Signs & Basic Rules",
+    "description": "Test your knowledge of common NYS road signs and fundamental driving rules. (10 questions)",
+    "fileName": "mcq1.json"
+  },
+  {
+    "id": "mcq2",
+    "title": "Practice Quiz 2: Speed Limits & Right of Way (Placeholder)",
+    "description": "This quiz covers speed regulations and right-of-way laws in New York State. (10 questions)",
+    "fileName": "mcq2_placeholder.json"
+  }
+]

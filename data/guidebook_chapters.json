@@ -1,0 +1,20 @@
+[
+  {
+    "id": "chapter1",
+    "title": "Chapter 1: Introduction to the NYS Driver's Manual",
+    "summary": "This chapter provides an overview of the New York State Driver's Manual, including how to use it to prepare for your permit test and road test. It covers basic vehicle operation, traffic laws, and safe driving practices.",
+    "audio_url": "audio/chapter1_summary.mp3"
+  },
+  {
+    "id": "chapter2",
+    "title": "Chapter 2: Traffic Signs and Signals",
+    "summary": "Learn about the various traffic signs, signals, and pavement markings used in New York State. Understanding these is crucial for safe driving and passing your DMV tests.",
+    "audio_url": null
+  },
+  {
+    "id": "chapter3",
+    "title": "Chapter 3: Defensive Driving Techniques",
+    "summary": "This section focuses on defensive driving principles, including how to anticipate hazards, manage space around your vehicle, and react safely to other road users. Essential for all drivers.",
+    "audio_url": "audio/chapter3_summary.mp3"
+  }
+]

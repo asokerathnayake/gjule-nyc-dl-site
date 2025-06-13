@@ -1,0 +1,10 @@
+{
+  "questions": [
+    {
+      "question": "This is a placeholder question for MCQ Quiz 2. Content to be added.",
+      "options": ["Option A", "Option B", "Option C", "Option D"],
+      "correctAnswerIndex": 0,
+      "feedback": "This is placeholder feedback."
+    }
+  ]
+}

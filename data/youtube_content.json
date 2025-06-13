@@ -1,0 +1,14 @@
+[
+  {
+    "id": "yt_playlist_nys_rules",
+    "title": "NYS Driving Rules Explained (Playlist)",
+    "type": "playlist",
+    "embed_url": "https://www.youtube.com/embed/videoseries?list=PL_YOUR_PLAYLIST_ID_HERE"
+  },
+  {
+    "id": "yt_video_parallel_parking",
+    "title": "How to Parallel Park - NYS Road Test Tip",
+    "type": "video",
+    "embed_url": "https://www.youtube.com/embed/VIDEO_ID_PARALLEL_PARK"
+  }
+]

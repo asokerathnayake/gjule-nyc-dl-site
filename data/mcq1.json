@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question": "What does a flashing yellow traffic light mean?",
+      "options": ["Stop completely", "Proceed with caution", "Yield to oncoming traffic", "Speed up to clear the intersection"],
+      "correctAnswerIndex": 1,
+      "feedback": "A flashing yellow light means proceed with caution. Be aware of intersecting traffic."
+    },
+    {
+      "question": "What shape is a stop sign?",
+      "options": ["Circle", "Triangle", "Square", "Octagon"],
+      "correctAnswerIndex": 3,
+      "feedback": "A stop sign is an octagon (8-sided shape)."
+    },
+    {
+      "question": "In New York State, you must signal your turn at least how many feet before turning?",
+      "options": ["50 feet", "100 feet", "150 feet", "200 feet"],
+      "correctAnswerIndex": 1,
+      "feedback": "You must signal your turn at least 100 feet before making the turn in NYS."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "media_chap1_video",
+    "chapter_id": "chapter1",
+    "type": "video",
+    "title": "Visual Guide: Introduction to NYS Driving",
+    "url": "https://www.youtube.com/embed/VIDEO_ID_INTRO_NYS"
+  },
+  {
+    "id": "media_chap2_audio_detail",
+    "chapter_id": "chapter2",
+    "type": "audio",
+    "title": "Detailed Explanation: Common Traffic Signs Audio",
+    "url": "audio/chapter2_detailed_signs.mp3"
+  },
+  {
+    "id": "media_chap1_audio_alternative",
+    "chapter_id": "chapter1",
+    "type": "audio",
+    "title": "Chapter 1 Summary Podcast Version",
+    "url": "audio/chapter1_summary_podcast.mp3"
+  }
+]
